@@ -1,10 +1,10 @@
 import React from 'react'
 
-import Greetings from './Greetings'
+import Header from './Header'
 
 const App = () => (
   <div className='app-container'>
-    <Greetings />
+    <Header />
   </div>
 )
 

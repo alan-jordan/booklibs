@@ -1,13 +1,14 @@
 {
-  "name": "boilerplate-react-webpack",
-  "version": "0.1.1",
-  "description": "A webpack React starter",
-  "repository": "https://github.com/dev-academy-challenges/boilerplate-react-webpack.git",
+  "name": "gamr",
+  "version": "0.2.0",
+  "description": "Second attempt at building gamr",
+  "repository": "https://github.com/alan-jordan/gamr-v2",
   "main": "server/index.js",
   "scripts": {
+    "knex": "knex",
     "dev": "nodemon --watch server server/index & webpack --watch",
     "start": "node server/index",
-    "test": "ava  -v 'test/**/*.test.js'",
+    "test": "standard | snazzy & ava  -v 'tests/**/*.test.js'",
     "watch": "nodemon -e js,jsx -x npm test",
     "h:deploy": "git push heroku master",
     "h:migrate": "heroku run knex migrate:latest",
@@ -25,7 +26,7 @@
       "stage-0"
     ]
   },
-  "author": "EDA",
+  "author": "Alan Jordan",
   "license": "ISC",
   "devDependencies": {
     "ava": "^0.19.1",
@@ -38,22 +39,27 @@
     "enzyme": "^2.8.2",
     "jsdom": "^11.0.0",
     "jsx-loader": "^0.13.2",
+    "nock": "^9.0.13",
     "nodemon": "^1.11.0",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-test-renderer": "^15.5.4",
+    "snazzy": "^7.0.0",
     "sqlite3": "^3.1.8",
+    "standard": "^10.0.2",
     "supertest": "^3.0.0",
     "webpack": "^2.3.3",
     "webpack-dev-server": "^2.4.2"
   },
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.15.2",
     "cors": "^2.8.3",
     "express": "^4.14.0",
     "knex": "^0.13.0",
     "pg": "^6.2.3",
     "react-redux": "^5.0.5",
+    "react-router-dom": "^4.1.1",
     "redux": "^3.6.0",
     "redux-thunk": "^2.2.0",
     "superagent": "^2.2.0"
