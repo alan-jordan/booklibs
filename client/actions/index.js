@@ -1,10 +1,24 @@
 var request = require('superagent')
 
-const receiveGiphy = (gif) => {
+const receiveGif = (gif) => {
   return {
-    type: 'RECEIVE_GIPHY',
+    type: 'RECEIVE_GIF',
     image: gif
   }
+}
+
+const searchError = (message) => {
+  return {
+    type: 'SEARCH_ERROR',
+    message
+  }
+}
+
+function processGif(query, data) {
+ let keyword = query
+ let url  = data.data.images.fixed_width.url
+ let gif = {keyword, url}
+ return gif
 }
 
 function fetchGif (query) {
@@ -19,9 +33,14 @@ function fetchGif (query) {
         if (err) {
           dispatch(searchError(err.message))
         } else {
-
-          dispatch(receiveGif(res.body))
+          let result = processGif(query, res.body)
+          dispatch(receiveGif(result))
         }
       })
   }
+}
+
+module.exports = {
+  fetchGif,
+  receiveGif
 }
