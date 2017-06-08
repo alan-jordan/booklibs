@@ -5,7 +5,7 @@ const Cover = () =>
       <div className='cover'>
         <div className='spine'>
         </div>
-        <div className='frontPage'>
+        <div className='page'>
           <h1>Jackanory</h1>
           <div className='frontPageSmallContainer'>
             <div className='frontPageInfo'>
@@ -24,6 +24,5 @@ const Cover = () =>
         </div>
       </div>
    )
-
 
 export default Cover

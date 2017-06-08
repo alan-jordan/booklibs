@@ -10,7 +10,7 @@
   margin: 1vh 0 1vh 0;
 }
 
-.frontPage {
+.page {
   flex-basis: 95vw;
   height: 80vh;
   margin: 1vh 0 1vh 0;
@@ -28,4 +28,19 @@
   align-self: flex-end;
   flex-basis: 40vw;
   text-align: left;
+}
+.images {
+  display: flex;
+  flex-direction: row;
+}
+.image {
+  margin: 1vh;
+  border-style:  groove;
+  padding: 1vh;
+  flex-basis: 200px;
+  height: 15vw;
+  display: flex;
+}
+.gif {
+
 }

@@ -12098,7 +12098,7 @@ var Cover = function Cover() {
     _react2.default.createElement('div', { className: 'spine' }),
     _react2.default.createElement(
       'div',
-      { className: 'frontPage' },
+      { className: 'page' },
       _react2.default.createElement(
         'h1',
         null,
@@ -12199,7 +12199,7 @@ exports.default = Library;
 
 
 Object.defineProperty(exports, "__esModule", {
-   value: true
+  value: true
 });
 
 var _react = __webpack_require__(5);
@@ -12209,11 +12209,44 @@ var _react2 = _interopRequireDefault(_react);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Page = function Page() {
-   return _react2.default.createElement(
-      "div",
-      { className: "page" },
-      "Page view!"
-   );
+  return _react2.default.createElement(
+    'div',
+    { className: 'cover' },
+    _react2.default.createElement('div', { className: 'spine' }),
+    _react2.default.createElement(
+      'div',
+      { className: 'page' },
+      _react2.default.createElement(
+        'p',
+        null,
+        'This is a story _______. Someone did _______ and then _______. Because _________.'
+      ),
+      _react2.default.createElement(
+        'div',
+        { className: 'images' },
+        _react2.default.createElement(
+          'div',
+          { className: 'image' },
+          _react2.default.createElement('img', { className: 'gif', src: 'http://placekitten.com/g/200/200' })
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'image' },
+          _react2.default.createElement('img', { className: 'gif', src: 'http://placekitten.com/g/200/200' })
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'image' },
+          _react2.default.createElement('img', { className: 'gif', src: 'http://placekitten.com/g/200/200' })
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'image' },
+          _react2.default.createElement('img', { className: 'gif', src: 'http://placekitten.com/g/200/200' })
+        )
+      )
+    )
+  );
 };
 
 exports.default = Page;
