@@ -231,3 +231,6 @@ This post creates an entry in user stories table containing the story the user h
 * In case of server error, the header status code is a 5xx error code and the response body contains an error object.
 
 The server will return an object structured as following
+    {
+        "user_story_id:" 4
+    }
