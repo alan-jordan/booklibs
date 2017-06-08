@@ -1,12 +1,24 @@
 import React from 'react'
+import {connect} from 'react-redux'
+import {fetchGif} from '../actions'
 
-const Page = () =>
-   (
+class Page extends React.Component {
+
+  handleClick(){
+
+    this.props.dispatch(fetchGif('superman'))
+
+  }
+
+render() {
+  return  (
    <div className='story'>
       <div className='cover'>
          <div className='spine'>
             </div>
          <div className='page'>
+          <button className='search' onClick={this.handleClick.bind(this)}>Go</button>
+
             <p>Our story begins with a _______ called '*****'.
             </p>
             <p>Nothing that '*****' did made any sense to sensible people. Things like _______.
@@ -83,6 +95,9 @@ const Page = () =>
 
       </div>
    </div>
-)
+ )
+ }
 
+}
+Page = connect()(Page)
 export default Page
