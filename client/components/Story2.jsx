@@ -7,13 +7,13 @@ const Page = () =>
          <div className='spine'>
             </div>
          <div className='page'>
-            <p>Our story begins with a _______ called '*****'.
+            <p>Once upon a time there was a _______ called '*****'.
             </p>
-            <p>Nothing that '*****' did made any sense to sensible people. Things like _______.
+            <p>'*****' enjoyed being out-doors and exploring in the _______.
             </p>
-            <p>This made all the grown ups-feel _______.
+            <p>Sometimes when everyone was outside, '*****' would find _______.
             </p>
-            <p>Because the grown-ups were _________.
+            <p>It is fun to collect _________ outside!
             </p>
             <div className='images'>
                <div className='image'>
@@ -32,13 +32,13 @@ const Page = () =>
          </div>
 
          <div className='page'>
-            <p>One day '***** ' didn't come out to hang with his grown-up friends.
+            <p>'***** ' brought home all of the _____________ that had been found that day,
             </p>
-            <p>This was because _______.
+            <p>and started a collection in their ___________.
             </p>
-            <p>The grown-ups all thought this was very _______.
+            <p>When '*****' family or friends came over, it was a great treat to show off the _______.
             </p>
-            <p>They decided to _________ and it made '*****' feel _________.
+            <p>One rainy weekend '*****' found out _________.
             </p>
             <div className='images'>
                <div className='image'>
@@ -57,11 +57,11 @@ const Page = () =>
          </div>
 
           <div className='page'>
-            <p>So together they all _______________.
+            <p>So '*****' made the decision to _______________.
             </p>
             <p>They used _________ and ____________.
             </p>
-            <p>This helped '*****' and all the grown-ups become friends again.
+            <p>This helped '*****' learn an important lesson.
             </p>
             <p>And they all lived ____________ ever after.
             </p>
