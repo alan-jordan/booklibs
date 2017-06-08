@@ -1,0 +1,65 @@
+body {
+  font-family: 'Satisfy', cursive;
+}
+
+.cover {
+  display: flex;
+  flex-direction: row;
+}
+
+.spine {
+  flex-basis: 5vw;
+  background-color: red;
+  height: 97vh;
+  margin: 1vh 0 1vh 0;
+}
+
+.page {
+  flex-basis: 95vw;
+  height: 80vh;
+  margin: 1vh 0 1vh 0;
+  padding: 1vh;
+}
+
+.frontPageSmallContainer {
+  display: flex;
+  flex-direction: row;
+}
+.frontPageInfo {
+  flex-basis: 30vw;
+}
+.pickaStory {
+  align-self: flex-end;
+  flex-basis: 40vw;
+  text-align: left;
+}
+.images {
+  display: flex;
+  flex-direction: row;
+}
+.image {
+  margin: 1vh;
+  border-style:  groove;
+  padding: 1vh;
+  flex-basis: 200px;
+  height: 15vw;
+  display: flex;
+}
+.gif {
+
+}
+.end {
+
+}
+input[type="text"]
+{
+    font-family: 'Satisfy', cursive;
+}
+input, textarea {
+  font-family: 'Satisfy', cursive;
+  border  : none;
+  border-bottom: 1px solid black;
+  padding : 0 10px;
+  margin  : 0;
+  background: none;
+}
