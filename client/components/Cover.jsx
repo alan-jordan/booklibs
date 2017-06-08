@@ -10,8 +10,7 @@ const Cover = () =>
           <div className='frontPageSmallContainer'>
             <div className='frontPageInfo'>
               <p>
-                Welcome to our application designed for 5-9 year olds. You'll
-                be able to build your own interactive Gif powered story book.
+                "Welcome to our application designed for 5-9 year olds (and Matt). You'll be able to build your own interactive Gif powered story book."
               </p>
               <p>
                 Have fun!
