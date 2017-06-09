@@ -2,7 +2,7 @@ import React from 'react'
 
 const TheEnd = () =>
    (
-     <div className='cover'>
+     <div className='back-cover'>
        <div className='spine'>
        </div>
        <div className='end-page'>

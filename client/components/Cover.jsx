@@ -6,7 +6,6 @@ const Cover = () =>
         <div className='spine'>
         </div>
         <div className='page'>
-          <h1>GiphyBook</h1>
           <div className='frontPageSmallContainer'>
             <div className='frontPageInfo'>
               <p>
