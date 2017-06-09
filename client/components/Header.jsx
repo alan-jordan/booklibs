@@ -3,7 +3,7 @@ import React from 'react'
 const Header = () => {
   return (
     <div className='header'>
-      Hi there Header here :D
+      <h1>GiphyBook</h1>
     </div>
   )
 }
