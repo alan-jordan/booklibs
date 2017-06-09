@@ -29,7 +29,7 @@ class Page extends React.Component {
     return (
       <div className='story'>
         <div className='cover'>
-          <div className='spine'></div>
+          <div className='spine'><img src="/images/spine.jpg" /></div>
           <div className='page'>
 
             <p>Our story begins with a
@@ -39,8 +39,7 @@ class Page extends React.Component {
             </p>
             <p>Nothing that
               <input type='text'/>
-              did made any sense to sensible people. Things like
-              <input onKeyUp={(e) => this.handleKeyUp(e)} name='field1' type='text'/>.
+              did made any sense to sensible people. Things like <input onKeyUp={(e) => this.handleKeyUp(e)} name='field1' type='text'/>.
             </p>
             <p>This made all the grown ups-feel
               <input onKeyUp={(e) => this.handleKeyUp(e)} name='field2' type='text'/>.
@@ -64,8 +63,11 @@ class Page extends React.Component {
               </div>
             </div>
           </div>
-          <a href="#/end">Next page</a>
 
+
+        </div>
+        <div id="next-page">
+          <a href="#/end">Next page</a>
         </div>
       </div>
     )
