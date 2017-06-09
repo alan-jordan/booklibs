@@ -5,14 +5,46 @@ import {fetchGif} from '../actions'
 
 class Page extends React.Component {
 
+  constructor(props) {
+    super(props)
+    this.state = {
+      page: props.page
+    }
+    // {
+      // field0: {
+      //   image:'http://placekitten.com/g/200/200'
+      // },
+      // field1: {
+      //   image:'http://placekitten.com/g/200/200'
+      // },
+      // field2: {
+      //   image:'http://placekitten.com/g/200/200'
+      // },
+      // field3: {
+      //   image:'http://placekitten.com/g/200/200'
+      // }
+    // }
+  }
+
   handleKeyUp(e) {
     if (e.key == 'Enter') {
-      console.log(e.target.name)
-      this.props.dispatch(fetchGif(e.target.name, e.target.value, 'http://google.com'))
+      this.props.dispatch(fetchGif(e.target.name, e.target.value))
     }
   }
 
+  componentDidMount() {
+}
+
+  componentWillReceiveProps(nextProps) {
+    this.setState({page: nextProps.page})
+    console.log(nextProps);
+    console.log("RECEIVED PROPS")
+  }
+    //update internal state of THIS Component to get new data from props
+
+
   render() {
+    console.log("rending")
     return (
       <div className='story'>
         <div className='cover'>
@@ -34,77 +66,17 @@ class Page extends React.Component {
             </p>
             <div className='images'>
               <div className='image'>
-                <img className='gif' src='http://placekitten.com/g/200/200'/>
+                {console.log(this.state.page)}
+                <img className='gif' src={this.state.page.field0.image}/>
               </div>
               <div className='image'>
-                <img className='gif' src='http://placekitten.com/g/200/200'/>
+                <img className='gif' src={this.state.page.field1.image}/>
               </div>
               <div className='image'>
-                <img className='gif' src='http://placekitten.com/g/200/200'/>
+                <img className='gif' src={this.state.page.field2.image}/>
               </div>
               <div className='image'>
-                <img className='gif' src='http://placekitten.com/g/200/200'/>
-              </div>
-            </div>
-          </div>
-
-          <div className='page'>
-            <p>One day '***** ' didn't come out to hang with his grown-up friends.
-            </p>
-            <p>This was because
-              <input onKeyUp={(e) => this.handleKeyUp(e)} name='field0' type='text'/>.
-            </p>
-            <p>The grown-ups all thought this was very
-              <input onKeyUp={(e) => this.handleKeyUp(e)} name='field1' type='text'/>.
-            </p>
-            <p>They decided to
-              <input onKeyUp={(e) => this.handleKeyUp(e)} name='field2' type='text'/>
-              and it made '*****' feel
-              <input onKeyUp={(e) => this.handleKeyUp(e)} name='field3' type='text'/>.
-            </p>
-            <div className='images'>
-              <div className='image'>
-                <img className='gif' src='http://placekitten.com/g/200/200'/>
-              </div>
-              <div className='image'>
-                <img className='gif' src='http://placekitten.com/g/200/200'/>
-              </div>
-              <div className='image'>
-                <img className='gif' src='http://placekitten.com/g/200/200'/>
-              </div>
-              <div className='image'>
-                <img className='gif' src='http://placekitten.com/g/200/200'/>
-              </div>
-            </div>
-          </div>
-
-          <div className='page'>
-            <p>So together they all
-              <input onKeyUp={(e) => this.handleKeyUp(e)} name='field0' type='text'/>.
-            </p>
-            <p>They used
-              <input onKeyUp={(e) => this.handleKeyUp(e)} name='field1' type='text'/>
-              and
-              <input onKeyUp={(e) => this.handleKeyUp(e)} name='field2' type='text'/>.
-            </p>
-            <p>This helped '*****' and all the grown-ups become friends again.
-            </p>
-            <p>And they all lived
-              <input onKeyUp={(e) => this.handleKeyUp(e)} name='field3' type='text'/>
-              ever after.
-            </p>
-            <div className='images'>
-              <div className='image'>
-                <img className='gif' src='http://placekitten.com/g/200/200'/>
-              </div>
-              <div className='image'>
-                <img className='gif' src='http://placekitten.com/g/200/200'/>
-              </div>
-              <div className='image'>
-                <img className='gif' src='http://placekitten.com/g/200/200'/>
-              </div>
-              <div className='image'>
-                <img className='gif' src='http://placekitten.com/g/200/200'/>
+                <img className='gif' src={this.state.page.field3.image}/>
               </div>
             </div>
           </div>
@@ -116,7 +88,8 @@ class Page extends React.Component {
 
 }
 const mapStateToProps = (state) => {
-  return {state: state.page}
+  console.log("mapping")
+  return {page: state.page}
 }
 
 export default connect(mapStateToProps)(Page)
