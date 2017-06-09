@@ -12,12 +12,18 @@ const receiveGif = (gif) => {
   }
 }
 
-const searchError = (message) => {
-  return {
-    type: 'SEARCH_ERROR',
-    message
-  }
+export const changeLoadState = (newLoadState) => {
+  return newLoadState ?
+    {type: 'TOGGLE_LOADING_ON'} :
+    {type: 'TOGGLE_LOADING_OFF'}
 }
+
+export const changeErrorState = (newErrorState) => {
+  return newErrorState ?
+    {type: 'TOGGLE_ERROR_ON'} :
+    {type: 'TOGGLE_ERROR_OFF'}
+}
+
 
 function processGif(imageID, query, data) {
  let keyword = query
@@ -41,9 +47,10 @@ function fetchGif (imageID, query) {
       })
       .end((err, res) => {
         if (err) {
-          dispatch(searchError(err.message))
+          dispatch(changeErrorState(true))
         } else {
           let result = processGif(imageID, query, res.body)
+          dispatch(changeLoadState(false))
           dispatch(receiveGif(result))
         }
       })
@@ -52,5 +59,7 @@ function fetchGif (imageID, query) {
 
 module.exports = {
   fetchGif,
-  receiveGif
+  receiveGif,
+  changeLoadState,
+  changeErrorState
 }

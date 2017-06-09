@@ -10,20 +10,6 @@ class Page extends React.Component {
     this.state = {
       page: props.page
     }
-    // {
-      // field0: {
-      //   image:'http://placekitten.com/g/200/200'
-      // },
-      // field1: {
-      //   image:'http://placekitten.com/g/200/200'
-      // },
-      // field2: {
-      //   image:'http://placekitten.com/g/200/200'
-      // },
-      // field3: {
-      //   image:'http://placekitten.com/g/200/200'
-      // }
-    // }
   }
 
   handleKeyUp(e) {
@@ -44,7 +30,6 @@ class Page extends React.Component {
 
 
   render() {
-    console.log("rending")
     return (
       <div className='story'>
         <div className='cover'>
@@ -66,17 +51,16 @@ class Page extends React.Component {
             </p>
             <div className='images'>
               <div className='image'>
-                {console.log(this.state.page)}
-                <img className='gif' src={this.state.page.field0.image}/>
+                <img className='gif' id='gif1' src={this.state.page.field0.image}/>
               </div>
               <div className='image'>
-                <img className='gif' src={this.state.page.field1.image}/>
+                <img className='gif' id='gif2'  src={this.state.page.field1.image}/>
               </div>
               <div className='image'>
-                <img className='gif' src={this.state.page.field2.image}/>
+                <img className='gif' id='gif3'  src={this.state.page.field2.image}/>
               </div>
               <div className='image'>
-                <img className='gif' src={this.state.page.field3.image}/>
+                <img className='gif' id='gif4'  src={this.state.page.field3.image}/>
               </div>
             </div>
           </div>
@@ -88,8 +72,11 @@ class Page extends React.Component {
 
 }
 const mapStateToProps = (state) => {
-  console.log("mapping")
-  return {page: state.page}
+  return {
+    page: state.page,
+    isLoading: state.isLoading,
+    error: state.error
+  }
 }
 
 export default connect(mapStateToProps)(Page)
