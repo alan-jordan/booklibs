@@ -176,11 +176,14 @@ Sample Response
 
 The get request returns a giphy object, containing the search term, Giphy image url (images.fixed_width.url).
 
-`
-{   searchTerm: 'superman',
-    imgUrl:'http://media2.giphy.com/media/wWAIKcFASEFz2/200_s.gif' }
 
-`
+	{   field0: {
+			keyword: 'superman',
+    	    		image:'http://media2.giphy.com/media/wWAIKcFASEFz2/200_s.gif'
+		    }
+	}
+
+
 
 ### Return a list of stories
 
