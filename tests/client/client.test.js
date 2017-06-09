@@ -18,7 +18,7 @@ test('Header div exists in App', t => {
 })
 
 test('Shallow test for H1 tag', t => {
-  const wrapper = shallow(< />)
+  const wrapper = shallow(<App />)
   t.is(wrapper.contains(<h1></h1>), true)
 })
 
