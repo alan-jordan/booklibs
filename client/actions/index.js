@@ -1,10 +1,13 @@
 var request = require('superagent')
 
 const receiveGif = (gif) => {
-  console.log(gif)
+  let id = Object.keys(gif)[0]
+
   return {
     type: 'RECEIVE_GIF',
-    image: gif
+    id: id,
+    keyword: gif[id].keyword,
+    image: gif[id].url
   }
 }
 
@@ -15,14 +18,23 @@ const searchError = (message) => {
   }
 }
 
-function processGif(query, data) {
+function processGif(imageID, query, data) {
  let keyword = query
  let url  = data.data.images.fixed_width.url
- let gif = {keyword, url}
+ let id = imageID
+ // let gif = {
+ //   id: {
+ //
+ //   } keyword, url}
+ let gif = {
+   [id]: {
+     keyword, url
+   }
+ }
  return gif
 }
 
-function fetchGif (query) {
+function fetchGif (imageID, query) {
   return (dispatch) => {
     request
       .get('http://api.giphy.com/v1/gifs/translate')
@@ -34,7 +46,7 @@ function fetchGif (query) {
         if (err) {
           dispatch(searchError(err.message))
         } else {
-          let result = processGif(query, res.body)
+          let result = processGif(imageID, query, res.body)
           dispatch(receiveGif(result))
 
         }
