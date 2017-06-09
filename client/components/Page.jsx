@@ -80,6 +80,7 @@ class Page extends React.Component {
               </div>
             </div>
           </div>
+          <a href="#/end">Next page</a>
 
         </div>
       </div>
