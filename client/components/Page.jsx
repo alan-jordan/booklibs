@@ -10,20 +10,6 @@ class Page extends React.Component {
     this.state = {
       page: props.page
     }
-    // {
-      // field0: {
-      //   image:'http://placekitten.com/g/200/200'
-      // },
-      // field1: {
-      //   image:'http://placekitten.com/g/200/200'
-      // },
-      // field2: {
-      //   image:'http://placekitten.com/g/200/200'
-      // },
-      // field3: {
-      //   image:'http://placekitten.com/g/200/200'
-      // }
-    // }
   }
 
   handleKeyUp(e) {
@@ -32,16 +18,11 @@ class Page extends React.Component {
     }
   }
 
-  componentDidMount() {
-}
+  componentDidMount() {}
 
   componentWillReceiveProps(nextProps) {
     this.setState({page: nextProps.page})
-    console.log(nextProps);
-    console.log("RECEIVED PROPS")
   }
-    //update internal state of THIS Component to get new data from props
-
 
   render() {
     console.log("rending")
@@ -53,9 +34,12 @@ class Page extends React.Component {
 
             <p>Our story begins with a
               <input onKeyUp={(e) => this.handleKeyUp(e)} name='field0' type='text'/>
-              called '*****'.
+              called
+              <input type='text'/>.
             </p>
-            <p>Nothing that '*****' did made any sense to sensible people. Things like
+            <p>Nothing that
+              <input type='text'/>
+              did made any sense to sensible people. Things like
               <input onKeyUp={(e) => this.handleKeyUp(e)} name='field1' type='text'/>.
             </p>
             <p>This made all the grown ups-feel
