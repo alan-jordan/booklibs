@@ -12,13 +12,15 @@ class Page extends React.Component {
     }
   }
 
+// Remove console logs throughout.
+
   handleKeyUp(e) {
     if (e.key == 'Enter') {
       this.props.dispatch(fetchGif(e.target.name, e.target.value))
     }
   }
 
-  componentDidMount() {}
+  componentDidMount() {} // remove or use.
 
   componentWillReceiveProps(nextProps) {
     this.setState({page: nextProps.page})
