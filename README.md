@@ -2,7 +2,7 @@
 
 ## Learning goals
 * Alan - Redux, Redux Forms and React
-* Sherly - Teamwork and testing
+* Sherly - Teamwork, Design & Testing
 * Bev - Communications, testing and APIs
 
 ## MockUps
